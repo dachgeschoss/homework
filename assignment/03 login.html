@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>로그인</title>
+    <style>
+        div.container, header, div.center, footer, nav, section, aside{
+            border: 1px solid ivory;
+            text-align:center;
+        }
+
+        div.container {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            width: 1200px;
+            height: 900px;
+            background-color: ivory;
+            margin: 20px auto;
+        }
+
+        header{
+            height: 200px;            
+            background-image: url("mint-choco-drawings.png");
+            background-color: transparent;
+            overflow: hidden;
+                      
+        }
+
+        h1 {color:red; }
+        h1:hover{
+            color: turquoise;}
+         
+        div.center {
+            height: 640px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        nav{
+            width: 150px;
+            background-color:mediumturquoise;
+            flex-direction: column;
+            justify-content: center;
+
+        }
+
+        section{
+            width: 800px;
+            background-color: lemonchiffon;
+            padding: 20px;
+        }
+
+        aside{
+            width: 250px;
+            background-color: mediumturquoise;
+        }
+
+        footer{
+            height: 53px;
+            background-color:turquoise;
+        }
+
+        button{
+            width: 120px;
+            height: 50px;
+            font-size: large;
+            font-weight: bold;
+            margin: 10px;
+            background-color: lightyellow;
+            
+        }
+
+        
+                 
+    </style>
+
+</head>
+<body>
+    <div class='container'>
+
+        <header>          
+            
+        </header>
+        <div class='center'>
+            
+            <nav>
+                <button><a href="01 home.html"> 홈 </a></button><br>
+                <button><a href="02 me.html">자기소개</a></button>
+                <button><a href="03 login.html">로그인 </a></button><br>
+                <button><a href="04 register.html">회원가입</a></button><br>
+                <button><a href="05 table list.html">게시판 </a></button><br>
+                
+                               
+            </nav>
+
+            <section>
+                <form action='a.jsp' method='get' name='frm' onsubmit='return'>
+                
+                    <fieldset>
+                        <legend>로그인</legend>
+                        <p>아이디 : <input type='text' name='userid' size='15' required</p>
+                        <p>비밀번호 : <input type='password' name='psw' size='15' required</p>
+                        <p></p>
+                        <input type='button' value='확인 및 전송' onclick="checkForm()">
+                        
+            
+                    </fieldset>
+                </form>
+
+                <script>
+                function checkForm(){
+                    if(frm.userid.value==''){
+                        alert('아이디를 입력하세요');
+                        frm.userid.focus();
+                        return;
+                    }
+
+                    if(frm.psw.value==''){
+                        alert('비밀번호를 입력하세요');
+                        frm.psw.focus();
+                        return;
+                    }
+                    
+                    frm.submit();
+                }
+                </script>
+            </section>
+
+
+            <aside>
+                
+            </aside>
+        </div>
+        
+        <footer>
+            <h5>copyright 민트초코</h5>
+        </footer>
+
+    </div>
+</body>
+</html>

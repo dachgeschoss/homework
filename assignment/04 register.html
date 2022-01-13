@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>회원가입</title>
+    
+    <style>
+        div.container, header, div.center, footer, nav, section, aside{
+            border: 1px solid ivory;
+            text-align:center;
+        }
+
+        div.container {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            width: 1200px;
+            height: 900px;
+            background-color: ivory;
+            margin: 20px auto;
+        }
+
+        header{
+            height: 200px;            
+            background-image: url("mint-choco-drawings.png");
+            background-color: transparent;
+            overflow: hidden;
+                      
+        }
+
+        h1 {color:red; }
+        h1:hover{
+            color: turquoise;}
+         
+        div.center {
+            height: 640px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        nav{
+            width: 150px;
+            background-color:mediumturquoise;
+            flex-direction: column;
+            justify-content: center;
+
+        }
+
+        section{
+            width: 800px;
+            background-color: lemonchiffon;
+            padding: 20px;
+            text-align: left;
+            
+        }
+
+        aside{
+            width: 250px;
+            background-color: mediumturquoise;
+        }
+
+        footer{
+            height: 53px;
+            background-color:turquoise;
+        }
+
+        button{
+            width: 120px;
+            height: 50px;
+            font-size: large;
+            font-weight: bold;
+            margin: 10px;
+            background-color: lightyellow;
+            
+        }
+
+        
+                 
+    </style>
+
+</head>
+<body>
+    <div class='container'>
+
+        <header>          
+            
+        </header>
+        <div class='center'>
+            
+            <nav>
+                <button><a href="01 home.html"> 홈 </a></button><br>
+                <button><a href="02 me.html">자기소개</a></button>
+                <button><a href="03 login.html">로그인 </a></button><br>
+                <button><a href="04 register.html">회원가입</a></button><br>
+                <button><a href="05 table list.html">게시판 </a></button><br>
+                
+                               
+            </nav>
+
+            <section>
+                <form action='a.jsp' method='get' name='frm' onsubmit='return'>
+                    <fieldset>
+                    <legend>회원 가입</legend>
+                    <P>이 름: <input type="text" name="name"></P>
+                    <p>아이디: <input type="text" name="userid"></p>
+                    <p>비밀번호: <input type="password" name="psw"></p>
+                    <p>생년월일: <input type="date" name="birthday"></p>
+                    <p>성 별: <input type="radio" name="sex" value="male">남자 
+                                <input type="radio" name="sex" value="female">여자
+                    </p>
+                    <p>E-mail: <input type="email" name="email"></p>  
+                    <p>메일수신: <input type="radio" name="spam" value="agree" checked>수신동의 
+                                <input type="radio" name="spam" value="disagree">수신거부</p>
+                    <p>핸 드 폰: <select name="phone"> 
+                                <option value="010" selected>010</option> 
+                                <option value="011" selected>011</option>
+                                <option value="070">070</option></select> - 
+                                <input type="text" name="phone"> - 
+                                <input type="text" name="phone">           
+                    </p>
+                    <p>MBTI: <input type="text" list="majorlist" name="mbti"> <datalist id="majorlist">
+                            <option value="ISTJ">ISTJ</option> 
+                            <option value="ISFJ">ISFJ</option> 
+                            <option value="INFJ">INFJ</option>
+                            <option value="INTJ">INTJ</option>
+                            <option value="ISTP">ISTP</option>
+                            <option value="ISFP">ISFP</option>
+                            <option value="INFP">INFP</option>
+                            <option value="INTP">INTP</option>
+                            <option value="ESTP">ESTP</option>
+                            <option value="ESFP">ESFP</option>
+                            <option value="ENFP">ENFP</option>
+                            <option value="ENTP">ENTP</option>
+                            <option value="ESTJ">ESTJ</option>
+                            <option value="ESFJ">ESFJ</option>
+                            <option value="ENFJ">ENFJ</option>
+                            <option value="ENTJ">ENTJ</option>
+                            </datalist>
+                    </p>
+                    <p>취 미: <input type="checkbox" name="pastime" value="shopping" checked>쇼핑 
+                            <input type="checkbox" name="pastime" value="internet">인터넷 
+                            <input type="checkbox" name="pastime" value="music">음악감상 
+                            <input type="checkbox" name="pastime" value="books">독서 
+                            <input type="checkbox" name="pastime" value="sports">스포츠 </p>
+                    <p>자기소개: <textarea name="txt" rows="5" cols="50">마음가는대로 써보세요!</textarea></p>
+                    <input type="button" value="가입내용 확인" onclick="checkForm()">
+                    <input type="submit" value="회원가입 완료">
+                    
+                    </fieldset>
+                </form>
+
+            <script>
+                
+                function checkForm(){
+                    if(frm.name.value==''){
+                        alert('이름을 입력하세요');
+                        frm.name.focus();
+                        return;
+                    }
+
+                    if(frm.userid.value==''){
+                        alert('아이디를 입력하세요');
+                        frm.userid.focus();
+                        return;
+                    }
+
+                    if(frm.psw.value==''){
+                        alert('비밀번호를 입력하세요');
+                        frm.psw.focus();
+                        return;
+                    }
+                    
+                    if(frm.sex[0].checked==false&&frm.sex[1].checked==false){
+                        alert('성별을 선택하세요');
+                        frm.sex[0].focus();
+                        return;
+                    }
+
+                    if(frm.pastime[0].checked==false&&frm.pastime[1].checked==false&&frm.pastime[2].checked==false&&frm.pastime[3].checked==false&&frm.pastime[4].checked==false){
+                        alert('취미를 한 개 이상 선택하세요');
+                        frm.pastime[0].focus();
+                        return;
+                    }
+
+                    if(frm.txt.value== ''){
+                        alert('자기소개를 입력하세요');
+                        frm.txt.focus();
+                        return;
+                    }
+
+                    frm.submit();
+
+                }
+
+            </script>
+            </section>
+
+
+            <aside>
+                
+            </aside>
+        </div>
+
+        <footer>
+            <h5>copyright 민트초코</h5>
+        </footer>
+
+        </div>
+
+    
+</body>
+
+</html>
